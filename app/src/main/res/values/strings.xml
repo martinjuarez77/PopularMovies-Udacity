@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Popular Movies</string>
+    <string name="error_message">Unespected error. Check internet connection.</string>
+
+    <!-- Detail view -->
+    <string name="details_title">Title</string>
+    <string name="details_release_date">Release date</string>
+    <string name="details_vote_average">Vote average</string>
+    <string name="details_vote_synopsis">Synopsis</string>
+
+    <!-- Menu values -->
+    <string name="action_most_popular">Most popular</string>
+    <string name="action_most_rated">Most rated</string>
+
+</resources>

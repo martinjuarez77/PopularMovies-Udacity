@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Películas populares</string>
+    <string name="error_message">Error no esperado. Verifique la conexión a internet.</string>
+
+    <!-- Detail view -->
+    <string name="details_title">Título</string>
+    <string name="details_release_date">Fecha de estreno</string>
+    <string name="details_vote_average">Votos</string>
+    <string name="details_vote_synopsis">Sinopsis</string>
+
+    <!-- Menu values -->
+    <string name="action_most_popular">Mas populares</string>
+    <string name="action_most_rated">Mas votadas</string>
+
+</resources>
