@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity implements MoviesAdapter.Mov
 
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
+        // load data from themoviedb service
         loadMoviesData(null);
 
     }
@@ -160,17 +161,22 @@ public class MainActivity extends AppCompatActivity implements MoviesAdapter.Mov
             String query = params[0];
             URL requestUrl = NetworkUtils.buildUrl(query, API_KEY);
 
-            try {
-                String jsonResponse = NetworkUtils.getResponseFromHttpUrl(requestUrl);
+            if (NetworkUtils.checkInternetAccess(MainActivity.this)){
+                try {
+                    String jsonResponse = NetworkUtils.getResponseFromHttpUrl(requestUrl);
 
-                ArrayList<MovieBean> moviesArrayData = JSONUtils.getMoviesArrayFromJson(MainActivity.this, jsonResponse);
+                    ArrayList<MovieBean> moviesArrayData = JSONUtils.getMoviesArrayFromJson(MainActivity.this, jsonResponse);
 
-                return moviesArrayData;
+                    return moviesArrayData;
 
-            } catch (Exception e) {
-                e.printStackTrace();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    return null;
+                }
+            } else {
                 return null;
             }
+
         }
 
         @Override
