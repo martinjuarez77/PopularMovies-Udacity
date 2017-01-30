@@ -12,4 +12,18 @@
     <string name="action_most_popular">Most popular</string>
     <string name="action_most_rated">Most rated</string>
 
+    <!-- Menu actions -->
+    <string name="url_action_most_popular">/movie/popular</string>
+    <string name="url_action_most_rated">/movie/top_rated</string>
+
+    <!-- API Key -->
+    <string name="api_key">YOUR_API_KEY</string>
+
+    <!-- themoviedb urls -->
+    <string name="themoviedb_url_check_connection">https://www.themoviedb.org</string>
+    <string name="themoviedb_url">http://api.themoviedb.org/3</string>
+    <string name="themoviedb_image_url">http://image.tmdb.org/t/p/w185/</string>
+    <string name="themoviedb_image_details_url">http://image.tmdb.org/t/p/w342/</string>
+
+
 </resources>

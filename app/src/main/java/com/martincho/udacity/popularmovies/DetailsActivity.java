@@ -11,7 +11,7 @@ import com.squareup.picasso.Picasso;
 
 public class DetailsActivity extends AppCompatActivity {
 
-    private static String IMAGE_PATH = "http://image.tmdb.org/t/p/w342/";
+
 
     TextView movie_title;
     TextView movie_release_date;
@@ -23,6 +23,8 @@ public class DetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
+
+        String IMAGE_PATH = getString(R.string.themoviedb_image_details_url);
 
         Intent previousIntent = getIntent();
 

@@ -18,8 +18,6 @@ import java.util.ArrayList;
 
 public class MoviesAdapter  extends RecyclerView.Adapter<MoviesAdapter.MoviesAdapterViewHolder> {
 
-    private static String IMAGE_PATH = "http://image.tmdb.org/t/p/w185/";
-
     private ArrayList<MovieBean> moviesArray;
 
     private final MovieAdapterOnClickHandler onClickHandler;
@@ -65,13 +63,17 @@ public class MoviesAdapter  extends RecyclerView.Adapter<MoviesAdapter.MoviesAda
 
     @Override
     public void onBindViewHolder(MoviesAdapterViewHolder movieAdapterViewHolder, int position) {
+
+        Context context = movieAdapterViewHolder.movieImageThumbnail.getContext();
+
         MovieBean movieDetails = moviesArray.get(position);
 
+        String IMAGE_PATH = context.getString(R.string.themoviedb_image_url);
 
         movieAdapterViewHolder.movieTitle.setText(movieDetails.getTitle());
 
         if (movieDetails.getMoviePoster()!= null ) {
-            Context context = movieAdapterViewHolder.movieImageThumbnail.getContext();
+
             Picasso.with(context).load(IMAGE_PATH + movieDetails.getMoviePoster()).into(movieAdapterViewHolder.movieImageThumbnail);
         }
 

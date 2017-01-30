@@ -16,6 +16,13 @@ import java.util.ArrayList;
 
 public class JSONUtils {
 
+    /**
+     * JSON Transformation into an ArrayList
+     * @param context
+     * @param jsonString
+     * @return
+     * @throws JSONException
+     */
     public static ArrayList<MovieBean> getMoviesArrayFromJson(Context context, String jsonString) throws JSONException {
 
         ArrayList<MovieBean> moviesArrayData = null;

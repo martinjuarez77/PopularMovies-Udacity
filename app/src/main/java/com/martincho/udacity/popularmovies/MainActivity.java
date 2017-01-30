@@ -22,10 +22,11 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements MoviesAdapter.MovieAdapterOnClickHandler {
 
-    private static String MOST_POPULAR = "/movie/popular";
-    private static String MOST_RATED = "/movie/top_rated";
-
-    private static String API_KEY = "";
+    private String MOST_POPULAR;
+    private String MOST_RATED;
+    private String THEMOVIEDB_URL;
+    private String THEMOVIEDB_URL_CHECK_CONNECTION;
+    private String API_KEY;
 
     private RecyclerView moviesRecyclerView;
 
@@ -35,12 +36,12 @@ public class MainActivity extends AppCompatActivity implements MoviesAdapter.Mov
 
     private ProgressBar progressBar;
 
-    private GridLayoutManager gridLayoutManager;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+
+        loadVariables();
 
         setContentView(R.layout.activity_main);
 
@@ -53,8 +54,6 @@ public class MainActivity extends AppCompatActivity implements MoviesAdapter.Mov
         moviesRecyclerView.setLayoutManager(layoutManager);
 
         moviesRecyclerView.setHasFixedSize(true);
-
-
 
         moviesAdapter = new MoviesAdapter(this);
 
@@ -80,9 +79,16 @@ public class MainActivity extends AppCompatActivity implements MoviesAdapter.Mov
             query = MOST_POPULAR;
         }
 
-        new FetchMoviesTask().execute(query);
+        new FetchMoviesTask().execute(query, THEMOVIEDB_URL, THEMOVIEDB_URL_CHECK_CONNECTION);
     }
 
+    private void loadVariables(){
+        MOST_POPULAR = getString(R.string.url_action_most_popular);
+        MOST_RATED = getString(R.string.url_action_most_rated);
+        THEMOVIEDB_URL = getString(R.string.themoviedb_url);
+        THEMOVIEDB_URL_CHECK_CONNECTION = getString(R.string.themoviedb_url_check_connection);
+        API_KEY = getString(R.string.api_key);
+    }
     /**
      * Show movies
      */
@@ -126,6 +132,11 @@ public class MainActivity extends AppCompatActivity implements MoviesAdapter.Mov
         return true;
     }
 
+    /**
+     * Load data using sort method selected on menu
+     * @param item
+     * @return
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
@@ -140,8 +151,10 @@ public class MainActivity extends AppCompatActivity implements MoviesAdapter.Mov
 
         return super.onOptionsItemSelected(item);
     }
+
+
     /**
-     *
+     * Inner class to fetch data in async mode
      */
     public class FetchMoviesTask extends AsyncTask<String, Void, ArrayList<MovieBean>> {
 
@@ -159,9 +172,9 @@ public class MainActivity extends AppCompatActivity implements MoviesAdapter.Mov
             }
 
             String query = params[0];
-            URL requestUrl = NetworkUtils.buildUrl(query, API_KEY);
+            URL requestUrl = NetworkUtils.buildUrl(THEMOVIEDB_URL, query, API_KEY);
 
-            if (NetworkUtils.checkInternetAccess(MainActivity.this)){
+            if (NetworkUtils.checkInternetAccess(THEMOVIEDB_URL_CHECK_CONNECTION, MainActivity.this)){
                 try {
                     String jsonResponse = NetworkUtils.getResponseFromHttpUrl(requestUrl);
 

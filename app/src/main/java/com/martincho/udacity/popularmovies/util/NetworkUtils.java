@@ -19,12 +19,15 @@ import java.util.Scanner;
 
 public final class NetworkUtils {
 
-    private static final String THEMOVIEDB_URL = "http://api.themoviedb.org/3";
-    private static final String THEMOVIEDB_URL_CHECK_URL = "https://www.themoviedb.org";
-
-
-    public static URL buildUrl(String query, String apiKey) {
-        Uri builtUri = Uri.parse(THEMOVIEDB_URL + query).buildUpon()
+    /**
+     * Build URL with query parameters
+     * @param themoviedb_url
+     * @param query
+     * @param apiKey
+     * @return
+     */
+    public static URL buildUrl(String themoviedb_url, String query, String apiKey) {
+        Uri builtUri = Uri.parse(themoviedb_url + query).buildUpon()
                 .appendQueryParameter("api_key", apiKey)
                 .build();
 
@@ -37,6 +40,13 @@ public final class NetworkUtils {
         return url;
     }
 
+    /**
+     * Get JSON response from the server
+     * @param url
+     * @return
+     * @throws IOException
+     * @throws SocketTimeoutException
+     */
     public static String getResponseFromHttpUrl(URL url) throws IOException, SocketTimeoutException {
         HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
         urlConnection.setConnectTimeout(10000);
@@ -57,7 +67,13 @@ public final class NetworkUtils {
         }
     }
 
-    public static boolean checkInternetAccess(Context context) {
+    /**
+     * Check internet connection
+     * @param themoviedb_url_check_connection
+     * @param context
+     * @return
+     */
+    public static boolean checkInternetAccess(String themoviedb_url_check_connection, Context context) {
 
         boolean hasInternetAccess = false;
 
@@ -68,7 +84,7 @@ public final class NetworkUtils {
             NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
 
             if (networkInfo != null && networkInfo.isConnected()) {
-                URL url = new URL(THEMOVIEDB_URL_CHECK_URL);
+                URL url = new URL(themoviedb_url_check_connection);
                 HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
                 urlConnection.setConnectTimeout(5000);
                 urlConnection.connect();
