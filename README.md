@@ -2,4 +2,4 @@
 
 **Setup**
 
-Add your themoviedb.com API_KEY in MainActivity class.
+Add your themoviedb.com API_KEY in the file /res/values/strings.xml
