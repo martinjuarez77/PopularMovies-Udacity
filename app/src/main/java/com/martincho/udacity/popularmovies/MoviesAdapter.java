@@ -32,12 +32,10 @@ public class MoviesAdapter  extends RecyclerView.Adapter<MoviesAdapter.MoviesAda
 
     public class MoviesAdapterViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        public final TextView movieTitle;
         public final ImageView movieImageThumbnail;
 
         public MoviesAdapterViewHolder(View view) {
             super(view);
-            movieTitle = (TextView) view.findViewById(R.id.movieTitle);
             movieImageThumbnail = (ImageView) view.findViewById(R.id.movieImageThumbnail);
             view.setOnClickListener(this);
         }
@@ -69,8 +67,6 @@ public class MoviesAdapter  extends RecyclerView.Adapter<MoviesAdapter.MoviesAda
         MovieBean movieDetails = moviesArray.get(position);
 
         String IMAGE_PATH = context.getString(R.string.themoviedb_image_url);
-
-        movieAdapterViewHolder.movieTitle.setText(movieDetails.getTitle());
 
         if (movieDetails.getMoviePoster()!= null ) {
 
