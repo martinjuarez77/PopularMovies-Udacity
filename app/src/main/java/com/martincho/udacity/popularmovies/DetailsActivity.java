@@ -28,7 +28,7 @@ public class DetailsActivity extends AppCompatActivity {
 
         Intent previousIntent = getIntent();
 
-        MovieBean movieBean = (MovieBean) previousIntent.getSerializableExtra("movieBean");
+        MovieBean movieBean = previousIntent.getParcelableExtra("movieBean");
 
         String title = movieBean.getTitle();
         String releaseDate = movieBean.getReleaseDate();
