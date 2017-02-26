@@ -11,13 +11,15 @@
     <!-- Menu values -->
     <string name="action_most_popular">Most popular</string>
     <string name="action_most_rated">Most rated</string>
+    <string name="action_my_favorites">My favorite</string>
 
     <!-- Menu actions -->
     <string name="url_action_most_popular">/movie/popular</string>
     <string name="url_action_most_rated">/movie/top_rated</string>
+    <string name="url_action_favorites">MY_FAVORITES</string>
 
     <!-- API Key -->
-    <string name="api_key">YOUR_API_KEY</string>
+    <string name="api_key">3883a3d20ed985882ccbbf42d0af363f</string>
 
     <!-- themoviedb urls -->
     <string name="themoviedb_url_check_connection">https://www.themoviedb.org</string>
@@ -25,5 +27,8 @@
     <string name="themoviedb_image_url">http://image.tmdb.org/t/p/w185/</string>
     <string name="themoviedb_image_details_url">http://image.tmdb.org/t/p/w342/</string>
 
+    <!-- favorite movies actions -->
+    <string name="movie_added_to_favorites">Movie added to favorites</string>
+    <string name="movie_deleted_from_favorites">Movie deleted from favorites</string>
 
 </resources>

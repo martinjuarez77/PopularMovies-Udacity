@@ -11,5 +11,10 @@
     <!-- Menu values -->
     <string name="action_most_popular">Mas populares</string>
     <string name="action_most_rated">Mas votadas</string>
+    <string name="action_my_favorites">Mis preferidas</string>
+
+    <!-- favorite movies actions -->
+    <string name="movie_added_to_favorites">Película añadida a favoritos</string>
+    <string name="movie_deleted_from_favorites">Película eliminada de favoritos</string>
 
 </resources>

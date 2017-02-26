@@ -3,7 +3,9 @@ package com.martincho.udacity.popularmovies;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -28,7 +30,7 @@ public class DetailsActivity extends AppCompatActivity {
 
         Intent previousIntent = getIntent();
 
-        MovieBean movieBean = previousIntent.getParcelableExtra("movieBean");
+        final MovieBean movieBean = previousIntent.getParcelableExtra("movieBean");
 
         String title = movieBean.getTitle();
         String releaseDate = movieBean.getReleaseDate();
@@ -51,6 +53,19 @@ public class DetailsActivity extends AppCompatActivity {
         if (movieBean.getMoviePoster()!= null ) {
             Picasso.with(this).load(IMAGE_PATH + movieBean.getMoviePoster()).into(movie_movie_poster);
         }
+
+        FloatingActionButton fabButton = (FloatingActionButton) findViewById(R.id.addFavorite);
+
+        fabButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Create a new intent to start an AddTaskActivity
+                Intent addFavoriteMovie = new Intent(DetailsActivity.this, AddFavoriteMovieActivity.class);
+                addFavoriteMovie.putExtra("movieBean", movieBean);
+                startActivity(addFavoriteMovie);
+            }
+        });
+
 
     }
 }
