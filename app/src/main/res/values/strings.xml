@@ -19,7 +19,7 @@
     <string name="url_action_favorites">MY_FAVORITES</string>
 
     <!-- API Key -->
-    <string name="api_key">3883a3d20ed985882ccbbf42d0af363f</string>
+    <string name="api_key"></string>
 
     <!-- themoviedb urls -->
     <string name="themoviedb_url_check_connection">https://www.themoviedb.org</string>
