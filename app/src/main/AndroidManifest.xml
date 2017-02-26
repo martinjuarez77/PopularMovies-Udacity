@@ -29,6 +29,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
+
+        <activity android:name=".AddFavoriteMovieActivity" android:parentActivityName=".DetailsActivity"/>
+
+        <!-- Favorite movies content provider -->
+        <provider
+            android:name="com.martincho.udacity.popularmovies.db.PopularMoviesProvider"
+            android:authorities="com.martincho.udacity.popularmovies"
+            android:exported="false"/>
     </application>
 
 </manifest>
