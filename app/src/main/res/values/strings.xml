@@ -24,8 +24,13 @@
     <!-- themoviedb urls -->
     <string name="themoviedb_url_check_connection">https://www.themoviedb.org</string>
     <string name="themoviedb_url">http://api.themoviedb.org/3</string>
+    <string name="themoviedb_reviews_url">http://api.themoviedb.org/3/movie/#/reviews</string>
+    <string name="themoviedb_trailers_url">http://api.themoviedb.org/3/movie/#/trailers</string>
     <string name="themoviedb_image_url">http://image.tmdb.org/t/p/w185/</string>
     <string name="themoviedb_image_details_url">http://image.tmdb.org/t/p/w342/</string>
+
+    <string name="youtube_image_trailer_url">https://img.youtube.com/vi/#/default.jpg</string>
+    <string name="youtube_view_trailer_url">"http://www.youtube.com/watch?v="</string>
 
     <!-- favorite movies actions -->
     <string name="movie_added_to_favorites">Movie added to favorites</string>

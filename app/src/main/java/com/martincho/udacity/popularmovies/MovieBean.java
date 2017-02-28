@@ -14,6 +14,7 @@ public class MovieBean  implements Parcelable {
     private String moviePoster;
     private String voteAverage;
     private String plotSynopsis;
+    private String id;
 
     public MovieBean(){
 
@@ -25,6 +26,7 @@ public class MovieBean  implements Parcelable {
         this.moviePoster = _movieBean.readString();
         this.voteAverage = _movieBean.readString();
         this.plotSynopsis = _movieBean.readString();
+        this.id = _movieBean.readString();
     }
 
     public String getTitle() {
@@ -67,6 +69,14 @@ public class MovieBean  implements Parcelable {
         this.plotSynopsis = plotSynopsis;
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -79,7 +89,7 @@ public class MovieBean  implements Parcelable {
         parcel.writeString(moviePoster);
         parcel.writeString(voteAverage);
         parcel.writeString(plotSynopsis);
-
+        parcel.writeString(id);
     }
 
 

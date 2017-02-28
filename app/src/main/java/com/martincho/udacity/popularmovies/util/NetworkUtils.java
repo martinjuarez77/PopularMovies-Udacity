@@ -40,6 +40,20 @@ public final class NetworkUtils {
         return url;
     }
 
+
+    public static URL buildUrlWithMovieId(String themoviedb_url, String query, String apiKey) {
+        Uri builtUri = Uri.parse(themoviedb_url.replaceAll("#", query)).buildUpon()
+                .appendQueryParameter("api_key", apiKey)
+                .build();
+
+        URL url = null;
+        try {
+            url = new URL(builtUri.toString());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return url;
+    }
     /**
      * Get JSON response from the server
      * @param url
