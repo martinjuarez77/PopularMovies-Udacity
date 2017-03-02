@@ -1,4 +1,4 @@
-# Popular Movies App, Stage 1 for Associate Android Developer Fast Track
+# Popular Movies App, Stage 2 for Associate Android Developer Fast Track
 
 **Setup**
 
