@@ -14,6 +14,9 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.martincho.udacity.popularmovies.model.MovieBean;
+import com.martincho.udacity.popularmovies.model.MovieReviewBean;
+import com.martincho.udacity.popularmovies.model.MovieTrailerBean;
 import com.martincho.udacity.popularmovies.util.JSONUtils;
 import com.martincho.udacity.popularmovies.util.NetworkUtils;
 import com.squareup.picasso.Picasso;

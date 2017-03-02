@@ -8,6 +8,9 @@
     <string name="details_vote_average">Vote average</string>
     <string name="details_vote_synopsis">Synopsis</string>
 
+    <string name="details_reviews">Reviews</string>
+    <string name="details_trailers">Trailers</string>
+
     <!-- Menu values -->
     <string name="action_most_popular">Most popular</string>
     <string name="action_most_rated">Most rated</string>
@@ -26,14 +29,14 @@
     <string name="themoviedb_url">http://api.themoviedb.org/3</string>
     <string name="themoviedb_reviews_url">http://api.themoviedb.org/3/movie/#/reviews</string>
     <string name="themoviedb_trailers_url">http://api.themoviedb.org/3/movie/#/trailers</string>
-    <string name="themoviedb_image_url">http://image.tmdb.org/t/p/w185/</string>
+    <string name="themoviedb_image_url">http://image.tmdb.org/t/p/w300/</string>
     <string name="themoviedb_image_details_url">http://image.tmdb.org/t/p/w342/</string>
 
     <string name="youtube_image_trailer_url">https://img.youtube.com/vi/#/default.jpg</string>
     <string name="youtube_view_trailer_url">"http://www.youtube.com/watch?v="</string>
 
     <!-- favorite movies actions -->
-    <string name="movie_added_to_favorites">Movie added to favorites</string>
-    <string name="movie_deleted_from_favorites">Movie deleted from favorites</string>
+    <string name="movie_added_to_favorites">The movie was added to favorites</string>
+    <string name="movie_removed_from_favorites">The movie was deleted from favorites</string>
 
 </resources>

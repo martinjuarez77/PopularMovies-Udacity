@@ -6,8 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 
+import com.martincho.udacity.popularmovies.model.MovieBean;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;

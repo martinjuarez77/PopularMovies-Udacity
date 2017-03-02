@@ -12,7 +12,7 @@ public class PopularMoviesDBHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "popular_movies.db";
 
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
 
     public PopularMoviesDBHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -26,6 +26,7 @@ public class PopularMoviesDBHelper extends SQLiteOpenHelper {
                 "CREATE TABLE " + PopularMoviesContract.PopularMovieEntry.TABLE_NAME + " (" +
 
                 PopularMoviesContract.PopularMovieEntry._ID               + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                PopularMoviesContract.PopularMovieEntry.COLUMN_MOVIE_ID + " INTEGER  NOT NULL, " +
                 PopularMoviesContract.PopularMovieEntry.COLUMN_TITLE + " TEXT NOT NULL, " +
                 PopularMoviesContract.PopularMovieEntry.COLUMN_RELEASE_DATE       + " INTEGER NOT NULL, "                 +
                 PopularMoviesContract.PopularMovieEntry.COLUMN_MOVIE_POSTER + " TEXT NOT NULL, " +

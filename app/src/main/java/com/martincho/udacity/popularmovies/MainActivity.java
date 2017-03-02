@@ -20,6 +20,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.martincho.udacity.popularmovies.db.PopularMoviesContract;
+import com.martincho.udacity.popularmovies.model.MovieBean;
 import com.martincho.udacity.popularmovies.util.JSONUtils;
 import com.martincho.udacity.popularmovies.util.NetworkUtils;
 import com.martincho.udacity.popularmovies.util.PreferencesUtil;
@@ -223,6 +224,7 @@ public class MainActivity extends AppCompatActivity
                             movieBean.setMoviePoster(movieData.getString(movieData.getColumnIndex(PopularMoviesContract.PopularMovieEntry.COLUMN_MOVIE_POSTER)));
                             movieBean.setPlotSynopsis(movieData.getString(movieData.getColumnIndex(PopularMoviesContract.PopularMovieEntry.COLUMN_PLOT_SYNOPSIS)));
                             movieBean.setVoteAverage(movieData.getString(movieData.getColumnIndex(PopularMoviesContract.PopularMovieEntry.COLUMN_VOTE_AVERAGE)));
+                            movieBean.setId(movieData.getString(movieData.getColumnIndex(PopularMoviesContract.PopularMovieEntry.COLUMN_MOVIE_ID)));
                             moviesArrayData.add(movieBean);
 
                         }

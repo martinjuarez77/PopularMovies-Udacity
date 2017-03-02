@@ -8,6 +8,9 @@
     <string name="details_vote_average">Votos</string>
     <string name="details_vote_synopsis">Sinopsis</string>
 
+    <string name="details_reviews">Opiniones</string>
+    <string name="details_trailers">Avances</string>
+
     <!-- Menu values -->
     <string name="action_most_popular">Mas populares</string>
     <string name="action_most_rated">Mas votadas</string>
@@ -15,6 +18,6 @@
 
     <!-- favorite movies actions -->
     <string name="movie_added_to_favorites">Película añadida a favoritos</string>
-    <string name="movie_deleted_from_favorites">Película eliminada de favoritos</string>
+    <string name="movie_removed_from_favorites">Película eliminada de favoritos</string>
 
 </resources>

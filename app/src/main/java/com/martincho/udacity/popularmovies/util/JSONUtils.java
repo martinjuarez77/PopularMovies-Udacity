@@ -2,9 +2,9 @@ package com.martincho.udacity.popularmovies.util;
 
 import android.content.Context;
 
-import com.martincho.udacity.popularmovies.MovieBean;
-import com.martincho.udacity.popularmovies.MovieReviewBean;
-import com.martincho.udacity.popularmovies.MovieTrailerBean;
+import com.martincho.udacity.popularmovies.model.MovieBean;
+import com.martincho.udacity.popularmovies.model.MovieReviewBean;
+import com.martincho.udacity.popularmovies.model.MovieTrailerBean;
 
 import org.json.JSONArray;
 import org.json.JSONException;

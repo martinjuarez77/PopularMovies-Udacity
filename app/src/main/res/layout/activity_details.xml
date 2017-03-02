@@ -82,11 +82,19 @@
                 android:tint="@color/colorPrimaryDark"/>
 
 
+            <TextView
+                style="@style/detailsTitle"
+                android:text="@string/details_trailers" />
+
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/recyclerview_trailers_movie"
                 android:layout_width="match_parent"
                 android:background="#FFFFFF"
                 android:layout_height="match_parent"/>
+
+            <TextView
+                style="@style/detailsTitle"
+                android:text="@string/details_reviews" />
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/recyclerview_reviews_movie"
