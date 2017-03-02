@@ -19,6 +19,7 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.martincho.udacity.popularmovies.adapter.MoviesAdapter;
 import com.martincho.udacity.popularmovies.db.PopularMoviesContract;
 import com.martincho.udacity.popularmovies.model.MovieBean;
 import com.martincho.udacity.popularmovies.util.JSONUtils;

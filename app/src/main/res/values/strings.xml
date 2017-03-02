@@ -11,6 +11,9 @@
     <string name="details_reviews">Reviews</string>
     <string name="details_trailers">Trailers</string>
 
+    <string name="error_reviews_message">Error retrieving reviews data</string>
+    <string name="error_trailers_message">Error retrieving trailers</string>
+
     <!-- Menu values -->
     <string name="action_most_popular">Most popular</string>
     <string name="action_most_rated">Most rated</string>

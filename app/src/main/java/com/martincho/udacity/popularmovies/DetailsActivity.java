@@ -14,6 +14,8 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.martincho.udacity.popularmovies.adapter.MoviesReviewAdapter;
+import com.martincho.udacity.popularmovies.adapter.MoviesTrailerAdapter;
 import com.martincho.udacity.popularmovies.model.MovieBean;
 import com.martincho.udacity.popularmovies.model.MovieReviewBean;
 import com.martincho.udacity.popularmovies.model.MovieTrailerBean;
@@ -41,7 +43,8 @@ public class DetailsActivity extends AppCompatActivity
     private MoviesReviewAdapter movieReviewsAdapter;
     private MoviesTrailerAdapter movieTrailersAdapter;
 
-    private TextView errorMessage;
+    private TextView errorTrailersMessage;
+    private TextView errorReviewsMessage;
 
     private ProgressBar progressBar;
 
@@ -96,7 +99,8 @@ public class DetailsActivity extends AppCompatActivity
         });
 
 
-        errorMessage = (TextView) findViewById(R.id.errorMessage);
+        errorTrailersMessage = (TextView) findViewById(R.id.errorTrailersMessage);
+        errorReviewsMessage = (TextView) findViewById(R.id.errorReviewsMessage);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
         moviesReviewsRecyclerView = (RecyclerView) findViewById(R.id.recyclerview_reviews_movie);
@@ -132,7 +136,7 @@ public class DetailsActivity extends AppCompatActivity
      * Show movie's reviews
      */
     private void showMovieReviewDataView() {
-        //errorMessage.setVisibility(View.INVISIBLE);
+        errorReviewsMessage.setVisibility(View.INVISIBLE);
         moviesReviewsRecyclerView.setVisibility(View.VISIBLE);
     }
 
@@ -141,14 +145,14 @@ public class DetailsActivity extends AppCompatActivity
      */
     private void showMovieReviewErrorMessage() {
         moviesReviewsRecyclerView.setVisibility(View.INVISIBLE);
-        //errorMessage.setVisibility(View.VISIBLE);
+        errorReviewsMessage.setVisibility(View.VISIBLE);
     }
 
     /**
      * Show movie's trailers
      */
     private void showMovieTrailersDataView() {
-        //errorMessage.setVisibility(View.INVISIBLE);
+        errorTrailersMessage.setVisibility(View.INVISIBLE);
         moviesTrailersRecyclerView.setVisibility(View.VISIBLE);
     }
 
@@ -157,7 +161,7 @@ public class DetailsActivity extends AppCompatActivity
      */
     private void showMovieTrailersErrorMessage() {
         moviesTrailersRecyclerView.setVisibility(View.INVISIBLE);
-        //errorMessage.setVisibility(View.VISIBLE);
+        errorTrailersMessage.setVisibility(View.VISIBLE);
     }
 
 
@@ -192,7 +196,7 @@ public class DetailsActivity extends AppCompatActivity
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            //progressBar.setVisibility(View.VISIBLE);
+            progressBar.setVisibility(View.VISIBLE);
         }
 
         @Override
@@ -244,7 +248,7 @@ public class DetailsActivity extends AppCompatActivity
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            //progressBar.setVisibility(View.VISIBLE);
+            progressBar.setVisibility(View.VISIBLE);
         }
 
         @Override
@@ -288,7 +292,7 @@ public class DetailsActivity extends AppCompatActivity
 
     }
     /**
-     * onClick implementations, passing movie data
+     * onClick implementations, passing review data
      * @param movieReviewBean
      */
     @Override
@@ -304,7 +308,7 @@ public class DetailsActivity extends AppCompatActivity
     }
 
     /**
-     * onClick implementations, passing movie data
+     * onClick implementations, passing trailer data
      * @param movieTrailerBean
      */
     @Override
@@ -312,13 +316,14 @@ public class DetailsActivity extends AppCompatActivity
 
         String moviewId = movieTrailerBean.getSource();
         try {
+            // try to open trailer with youtube app
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("vnd.youtube:" + moviewId));
 
             intent.putExtra("VIDEO_ID", moviewId);
 
             startActivity(intent);
         } catch (android.content.ActivityNotFoundException e){
-
+            // on error, open trailer in a browser
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.youtube_view_trailer_url) + moviewId));
 
             startActivity(intent);

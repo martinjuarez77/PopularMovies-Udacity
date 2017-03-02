@@ -78,7 +78,7 @@
                 android:layout_gravity="bottom|end"
                 android:layout_margin="@dimen/fav_margin"
                 android:background="@color/colorAccent"
-                app:srcCompat="@android:drawable/ic_input_add"
+                app:srcCompat="@android:drawable/btn_star"
                 android:tint="@color/colorPrimaryDark"/>
 
 
@@ -107,11 +107,20 @@
     </ScrollView>
 
     <TextView
-        android:id="@+id/errorMessage"
+        android:id="@+id/errorReviewsMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="5dp"
-        android:text="@string/error_message"
+        android:text="@string/error_reviews_message"
+        android:textSize="20sp"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/errorTrailersMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="@string/error_trailers_message"
         android:textSize="20sp"
         android:visibility="invisible" />
 

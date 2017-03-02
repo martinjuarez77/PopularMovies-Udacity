@@ -37,7 +37,7 @@ public class AddFavoriteMovieActivity  extends AppCompatActivity {
         contentValues.put(PopularMoviesContract.PopularMovieEntry.COLUMN_VOTE_AVERAGE, movieBean.getVoteAverage());
         contentValues.put(PopularMoviesContract.PopularMovieEntry.COLUMN_MOVIE_ID, movieBean.getId());
 
-        // query is exists in favorites
+        // query for existing movie in favorites
         String [] resultColumns = {
                 PopularMoviesContract.PopularMovieEntry.COLUMN_MOVIE_ID
         };

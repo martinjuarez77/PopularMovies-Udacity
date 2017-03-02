@@ -1,4 +1,4 @@
-package com.martincho.udacity.popularmovies;
+package com.martincho.udacity.popularmovies.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.martincho.udacity.popularmovies.R;
 import com.martincho.udacity.popularmovies.model.MovieBean;
 import com.squareup.picasso.Picasso;
 
